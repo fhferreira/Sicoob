@@ -1,6 +1,6 @@
 <?php
 
-namespace Remessa\CNAB240;
+namespace Sicoob\Remessa\CNAB240;
 
 class Arquivo {
 
@@ -10,7 +10,7 @@ class Arquivo {
     //Header de Lote
     public $headerLote;
     //Segmentos P,Q,R,S -> Boletos
-    public $linhas = [];
+    public $boletos = [];
     //Trailer de Lote
 
     public $trailerLote;
@@ -26,8 +26,8 @@ class Arquivo {
         array_push($rendered, $this->header->render());
         array_push($rendered, $this->headerLote->render());
 
-        foreach($this->linhas as $linha) {
-            array_push($rendered, $linha->render());
+        foreach($this->boletos as $boleto) {
+            array_push($rendered, $boleto->render());
         }
 
         array_push($rendered, $this->trailerLote->render());

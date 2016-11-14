@@ -1,5 +1,5 @@
 <?php
-namespace Remessa\CNAB240;
+namespace Sicoob\Remessa\CNAB240;
 
 class TrailerArquivo{
 
