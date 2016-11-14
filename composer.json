@@ -1,0 +1,36 @@
+{
+  "name": "fhferreira/sicoob-boleto",
+  "type": "library",
+  "description": "Projeto para criar arquivos de remessas e processar arquivos de retorno no formato CNAB",
+  "keywords": [
+    "boleto",
+    "remessa",
+    "retorno",
+    "sicoob"
+  ],
+  "licence": "MIT",
+  "authors": [
+    {
+      "name": "Flávio Henrique Ferreira",
+      "email": "flaviometalvale@gmail.com"
+    }
+  ],
+  "repositories": [
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "3.7.*",
+    "phpunit/php-code-coverage": "1.2.*",
+    "codeclimate/php-test-reporter": "dev-master"
+  },
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sicoob\\": "src/"
+    }
+  },
+  "config": {
+    "bin-dir": "bin"
+  }
+}
