@@ -72,7 +72,7 @@ class Field
      */
     protected function parse($type)
     {
-        return call_user_method($type, $this);
+        return $this->$type();
     }
 
     protected function upper()
