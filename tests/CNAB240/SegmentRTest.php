@@ -58,7 +58,10 @@ class SegmentRTest extends PHPUnit_Framework_TestCase
 
     public function testLineLength()
     {
-        $this->assertEquals($this->object->size, strlen($this->object->render()));
+        $this->assertEquals(
+            $this->object->size,
+            strlen($this->object->render())
+        );
     }
 
 }
