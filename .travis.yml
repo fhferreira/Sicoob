@@ -1,12 +1,13 @@
 language: php
 
- php:
-     - 5.5
-     - 5.6
-     - 7.0
-     - hhvm
+php:
+  - 5.5
+  - 5.6
+  - 7.0
+  - 7.1
+  - hhvm
 
-   install:
-     - composer install --no-interaction --prefer-source
+install:
+  - composer install --no-interaction --prefer-source
 
-   script: vendor/bin/phpunit
+script: vendor/bin/phpunit
