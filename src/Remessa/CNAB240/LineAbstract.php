@@ -35,6 +35,7 @@ abstract class LineAbstract {
             }
             $this->fields[$name] = $field;
         }
+        //var_dump(get_class($this),$sum);
     }
 
     public function render()

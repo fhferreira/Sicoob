@@ -75,6 +75,11 @@ class Field
         return call_user_method($type, $this);
     }
 
+    protected function upper()
+    {
+        $this->value = mb_strtoupper($this->value);
+    }
+
     /**
      * @return string Returns the string rendered with a complete size
      */
@@ -99,6 +104,7 @@ class Field
      */
     protected function string()
     {
+        $this->upper();
         $this->completeSize();
         return $this->value;
     }
@@ -121,6 +127,9 @@ class Field
             default:
                 $character = ' ';
                 break;
+        }
+        if (strlen($this->value) > $this->size) {
+            $this->value = substr($this->value, 0, $this->size);
         }
         $this->value = Helper::completeSize($character, $this->value, $this->size, $this->side);
     }
