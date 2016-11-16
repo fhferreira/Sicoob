@@ -80,6 +80,115 @@ class Field
         $this->value = mb_strtoupper($this->value);
     }
 
+    protected function unaccent()
+    {
+        $this->value = str_replace(array(
+            'à',
+            'á',
+            'â',
+            'ã',
+            'ä',
+            'ç',
+            'è',
+            'é',
+            'ê',
+            'ë',
+            'ì',
+            'í',
+            'î',
+            'ï',
+            'ñ',
+            'ò',
+            'ó',
+            'ô',
+            'õ',
+            'ö',
+            'ù',
+            'ú',
+            'û',
+            'ü',
+            'ý',
+            'ÿ',
+            'À',
+            'Á',
+            'Â',
+            'Ã',
+            'Ä',
+            'Ç',
+            'È',
+            'É',
+            'Ê',
+            'Ë',
+            'Ì',
+            'Í',
+            'Î',
+            'Ï',
+            'Ñ',
+            'Ò',
+            'Ó',
+            'Ô',
+            'Õ',
+            'Ö',
+            'Ù',
+            'Ú',
+            'Û',
+            'Ü',
+            'Ý'
+        ), array(
+            'a',
+            'a',
+            'a',
+            'a',
+            'a',
+            'c',
+            'e',
+            'e',
+            'e',
+            'e',
+            'i',
+            'i',
+            'i',
+            'i',
+            'n',
+            'o',
+            'o',
+            'o',
+            'o',
+            'o',
+            'u',
+            'u',
+            'u',
+            'u',
+            'y',
+            'y',
+            'A',
+            'A',
+            'A',
+            'A',
+            'A',
+            'C',
+            'E',
+            'E',
+            'E',
+            'E',
+            'I',
+            'I',
+            'I',
+            'I',
+            'N',
+            'O',
+            'O',
+            'O',
+            'O',
+            'O',
+            'U',
+            'U',
+            'U',
+            'U',
+            'Y'
+        ), $this->value);
+    }
+
     /**
      * @return string Returns the string rendered with a complete size
      */
@@ -104,6 +213,7 @@ class Field
      */
     protected function string()
     {
+        $this->unaccent();
         $this->upper();
         $this->completeSize();
         return $this->value;
@@ -131,6 +241,11 @@ class Field
         if (strlen($this->value) > $this->size) {
             $this->value = substr($this->value, 0, $this->size);
         }
-        $this->value = Helper::completeSize($character, $this->value, $this->size, $this->side);
+        $this->value = Helper::completeSize(
+            $character,
+            $this->value,
+            $this->size,
+            $this->side
+        );
     }
 }
