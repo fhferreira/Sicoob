@@ -398,9 +398,9 @@ class SegmentP extends LineAbstract
             'start' => 221,
             'end' => 221,
             'size' => 1,
-            'default' => '0',
+            'default' => '1',
             'type' => 'numeric',
-            'description' => 'Código para Protesto: "1"'
+            'description' => 'Código para Protesto: "1", 2,3,9'
         ],
         'dias_protesto' => [
             'seq' => '37.3P',

@@ -240,12 +240,13 @@ class Field
         }
         if (strlen($this->value) > $this->size) {
             $this->value = substr($this->value, 0, $this->size);
+        } else {
+            $this->value = Helper::completeSize(
+                $character,
+                $this->value,
+                $this->size,
+                $this->side
+            );
         }
-        $this->value = Helper::completeSize(
-            $character,
-            $this->value,
-            $this->size,
-            $this->side
-        );
     }
 }

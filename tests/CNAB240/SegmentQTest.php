@@ -37,7 +37,7 @@ class SegmentQTest extends PHPUnit_Framework_TestCase
         ];
         $this->object->fill($data);
         $line = $this->object->render();
-        $this->assertContains("7560001300001Q 011000000000000000FLAVIO HENRIQUE FERREIRA                RUA SEBASTIAO MARTINS 80                JARDIM PEDREIRA14430000       RESTINGASP1000000000000000                                        000                            ", $line);
+        $this->assertContains("7560001300001Q 011000000000000000FLAVIO HENRIQUE FERREIRA                RUA SEBASTIAO MARTINS 80                JARDIM PEDREIRA14430000       RESTINGASP0000000000000000                                        000                            ", $line);
     }
 
     public function testLineLength()

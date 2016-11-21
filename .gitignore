@@ -1,5 +1,7 @@
 index.php
+gera.php
 vendor/
 bin/
 remessa.rem
+remessa.*
 remessa-passou-1-version.rem

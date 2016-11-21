@@ -68,8 +68,9 @@ class BoletoTest extends PHPUnit_Framework_TestCase
         $rendered = $this->object->render();
 
         $this->assertCount(4, $rendered);
-        $this->assertContains("7560002300009P 010432140000000001627 000000000001011     10 11000000000000000{$date}00000000031101200000 02A{$emissao}0{$date}000000000000000000000000000000000000000000000000000000000000000000000                         0000   090000000000 ", $rendered[0]);
-        $this->assertContains("7560002300010Q 011000000000000000FLAVIO HENRIQUE FERREIRA                RUA SEBASTIAO MARTINS 80                JARDIM PEDREIRA14430000       RESTINGASP1000000000000000                                        000                            ", $rendered[1]);
+        $this->assertContains("7560002300009P 010432140000000001627 000000000001011     10 11000000000000000{$date}00000000031101200000 02A{$emissao}0{$date}000000000000000000000000000000000000000000000000000000000000000000000                         1000   090000000000 ", $rendered[0]);
+
+        $this->assertContains("7560002300010Q 011000000000000000FLAVIO HENRIQUE FERREIRA                RUA SEBASTIAO MARTINS 80                JARDIM PEDREIRA14430000       RESTINGASP0000000000000000                                        000                            ", $rendered[1]);
         $this->assertContains("7560002300011R 01000000000000000000000000000000000000000000000000000000000000000000000000          MENSAGEM 3 PAGAMENTO ATE A DATA         MENSAGEM 4 PAGAMENTO ATE A DATA                             0000000000000000 000000000000  0         ", $rendered[2]);
         $this->assertContains("7560002300012S 013TELEFONES PARA CONTATO: (16) 3403-3000  QUER UM COBRADOR, ENTRE EM CONTATO      PAGAVEL ATE O DIA O ULTIMO DIA DO MES   DE VENCIMENTO                           SITE: WWW.NOVAFRANCA.COM.BR                                   ", $rendered[3]);
     }

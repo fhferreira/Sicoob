@@ -164,7 +164,7 @@ class SegmentQ extends LineAbstract
             'start' => 154,
             'end' => 154,
             'size' => 1,
-            'default' => '1',
+            'default' => '0',
             'type' => 'numeric',
             'description' => 'Tipo de Inscrição Sacador Avalista:
                               \'1\' = CPF
@@ -175,7 +175,7 @@ class SegmentQ extends LineAbstract
             'start' => 155,
             'end' => 169,
             'size' => 15,
-            'default' => '',
+            'default' => '0',
             'type' => 'numeric',
             'description' => 'Número de Inscrição Sacador Avalista'
         ],

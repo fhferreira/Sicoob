@@ -45,13 +45,13 @@ abstract class LineAbstract
     public function fill($attributes)
     {
         $this->data = $attributes;
-        $sum = 0;
+        //$sum = 0;
         foreach ($this->configs as $name => $config) {
             $field = new Field();
             $field->type = $config['type'];
             $field->name = $name;
             $field->size = $config['size'];
-            $sum += $config['size'];
+           // $sum += $config['size'];
             if (isset($attributes[$name])) {
                 $field->value = $attributes[$name];
             } elseif ($config['default']) {

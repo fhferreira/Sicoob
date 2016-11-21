@@ -52,6 +52,9 @@ class Boleto
         $this->fill($attributes);
     }
 
+    /**
+     * @param $attributes
+     */
     public function fill($attributes)
     {
         if (isset($attributes['valor'])) {
@@ -109,8 +112,10 @@ class Boleto
         return $this->{"segment" . $type};
     }
 
+
     /**
-     * @return array
+     * @param bool $joined
+     * @return array|string
      */
     public function render($joined = false)
     {
@@ -119,6 +124,6 @@ class Boleto
         $rendered[] = $this->getSegment('Q')->render();
         $rendered[] = $this->getSegment('R')->render();
         $rendered[] = $this->getSegment('S')->render();
-        return $joined ? implode('\r\n', $rendered) : $rendered;
+        return $joined ? implode("\r\n", $rendered) : $rendered;
     }
 }

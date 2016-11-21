@@ -3,8 +3,17 @@
          convertNoticesToExceptions="false"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="true"
-         bootstrap="tests/bootstrap.php">
+         bootstrap="tests/bootstrap.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         strict="false"
+         syntaxCheck="false"
+         verbose="true"
+    >
     <testsuites>
         <testsuite>
             <directory>tests</directory>
