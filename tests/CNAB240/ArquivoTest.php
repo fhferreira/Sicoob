@@ -61,7 +61,7 @@ class ArquivoTest extends PHPUnit_Framework_TestCase
         $date = date('dmY', strtotime('+1 month'));
         $emissao = date('dmY');
         $valor_boleto = 0.10;
-        $nosso_numero = '000000000001011';
+        $nosso_numero = '000000000001011     ';
         $numero_documento = '123456789012346';
         $Boleto = new Boleto();
         $Boleto->fill([
@@ -143,7 +143,7 @@ class ArquivoTest extends PHPUnit_Framework_TestCase
                 'informacao_5' => 'Telefones para Contato: (16) 3403-3000',
                 'informacao_6' => 'Quer um cobrador, entre em contato',
                 'informacao_7' => 'Pagavel até o dia o ultimo dia do mes',
-                'informacao_8' => 'de vencimento',
+                'informacao_8' => ' de vencimento',
                 'informacao_9' => 'Site: www.novafranca.com.br',
             ]
         ]);
@@ -161,6 +161,7 @@ class ArquivoTest extends PHPUnit_Framework_TestCase
         $this->object->saveFile($path);
 
         $this->assertFileExists($path);
+        @unlink($path);
     }
 
 }
