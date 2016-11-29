@@ -47,4 +47,35 @@ class Helper
         }
         return $calculated;
     }
+
+    public static function calculateStartAndLength($start, $end) {
+        return [
+            'start' => $start - 1,
+            'length' => ($end - $start) + 1,
+        ];
+    }
+
+    public static function cutInterval($string, $start, $end)
+    {
+        $positions = self::calculateStartAndLength($start, $end);
+        return substr($string, $positions['start'], $positions['length']);
+    }
+
+    public static function formatNossoNumero($value)
+    {
+        $NumTitulo = self::cutInterval($value, 1, 10);
+        $Parcela = self::cutInterval($value, 11, 12);
+        $Modalidade = self::cutInterval($value, 13, 14);
+        $TipoFormulario = self::cutInterval($value, 15, 15);
+        $Brancos = self::cutInterval($value, 16, 20);
+
+        return [
+            'numTitulo' => $NumTitulo,
+            'parcela' => $Parcela,
+            'modalidade' => $Modalidade,
+            'tipo_formulario' => $TipoFormulario,
+            'brancos' => $Brancos,
+        ];
+    }
+
 }

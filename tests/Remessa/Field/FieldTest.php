@@ -1,6 +1,6 @@
 <?php
 
-namespace Sicoob\Tests\Field;
+namespace Sicoob\Tests\Remessa\Field;
 
 use Sicoob\Remessa\Fields\Field;
 use PHPUnit_Framework_TestCase;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sicoob\Tests\CNAB240;
+namespace Sicoob\Tests\Remessa\CNAB240;
 
 use Sicoob\Remessa\Fields\Field;
 use Sicoob\Remessa\CNAB240\SegmentP;
