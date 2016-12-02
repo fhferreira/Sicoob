@@ -28,7 +28,6 @@ abstract class LineAbstract
             $field->start = $config['start'];
             $field->end = $config['end'];
             $field->length = $config['length'];
-            $field->type = $config['type'];
             $field->values = isset($config['values']) ? $config['values'] : null;
             $field->name = $configName;
             $field->value = Helper::cutInterval($line, $config['start'], $config['end']);

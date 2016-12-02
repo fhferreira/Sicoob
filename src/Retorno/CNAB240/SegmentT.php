@@ -22,7 +22,7 @@ class SegmentT extends LineAbstract
                 'length' => 4,
                 'required' => '',
                 'type' => 'numeric',
-                'description' => 'Código do Banco na Compensação: "756"'
+                'description' => 'Código do Lote 0001'
             ],
             'tipo_registro' => [
                 'seq' => '03.3T',

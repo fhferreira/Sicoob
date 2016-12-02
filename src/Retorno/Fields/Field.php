@@ -59,7 +59,7 @@ class Field {
         $value = substr($this->value, 0, strlen($this->length) - 4);
         $decimal = substr($this->value, -2, 2);
         $this->value = (float) $value . '.' . $decimal;
-        return $this->value;
+        return round($this->value, 2);
     }
 
     public function getDate()
