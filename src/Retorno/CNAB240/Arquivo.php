@@ -45,8 +45,8 @@ class Arquivo
         $lines = [];
         while (!feof($file)) {
             $line = fgets($file);
-            $line = trim($line);
-
+            $line = ltrim($line);
+            $line = str_replace("\r\n","", $line);
             if ($line) {
                 $lines[] = $line;
             }

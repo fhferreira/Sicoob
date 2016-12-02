@@ -2,7 +2,7 @@
 
 namespace Sicoob\Retorno\CNAB240;
 
-class HeaderLote
+class HeaderLote extends LineAbstract
 {
     /*
     01.1	001	003	003	-	Num	Controle	Banco			Código do Banco na Compensação: "756"

@@ -36,6 +36,11 @@ class ArquivoTest extends PHPUnit_Framework_TestCase
         $this->filename = $this->path . '/../../fixtures/2016-11-08.ret';
         $this->object->fill($this->filename);
         $this->assertFileExists($this->object->filename);
+        var_dump($this->object->header->line);
+        $this->assertEquals(240, strlen($this->object->header->line));
+        $this->assertEquals(240, strlen($this->object->headerLote->line));
+        $this->assertEquals(240, strlen($this->object->trailerLote->line));
+        $this->assertEquals(240, strlen($this->object->trailer->line));
     }
 
     public function testParse()

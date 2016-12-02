@@ -2,7 +2,7 @@
 
 namespace Sicoob\Retorno\CNAB240;
 
-class TrailerLote
+class TrailerLote extends LineAbstract
 {
     /*
     01.5	001	003	003	-	Num	Controle	Banco			Código do Banco na Compensação: "756"
