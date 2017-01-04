@@ -69,8 +69,7 @@ class BoletoService {
         $countBoleto=0;
         foreach ($boletos as $countBoleto => $boletoArr) {
 
-            $date = isset($boletoArr->periodoBarras[1]) ? $boletoArr->periodoBarras[1]: $boletoArr->periodoBarras[0];
-            $dtVencimento = date('dmY', strtotime($date));
+            $dtVencimento = date('dmY', strtotime($boletoArr->dtVencimento));
             $emissao = date('dmY');
             $hora = date('His');
 
@@ -80,14 +79,8 @@ class BoletoService {
             15, 
             '0', 
             STR_PAD_RIGHT);
-            $message3 = isset($boletoArr->periodoBarras[1]) ? sprintf("Data: %s à %s", 
-            $boletoArr->periodoBarras[0],
-            $boletoArr->periodoBarras[1]
-            ) : $boletoArr->periodoBarras[0];
-            $message4 = isset($boletoArr->intervaloBarras[1]) ? sprintf("Barra: %s à %s", 
-            $boletoArr->intervaloBarras[0],
-            $boletoArr->intervaloBarras[1]
-            ) : $boletoArr->intervaloBarras[0];
+            $message3 = "Mensagem 3";
+            $message4 = "Mensagem 4";
 
             $tamanho = 40;
             $endereco = $boletoArr->endereco;
@@ -136,16 +129,17 @@ class BoletoService {
                     'cidade' =>  $boletoArr->cidade,
                     'uf' =>  $boletoArr->uf,
                 ],
-                'segmentR' => [
+                //É necessário verificar a ordem das mensagens e quais são as que sobrescrevem outras.
+                'segmentR' => [
                     'informacao_3' => $message3,
                     'informacao_4' => $message4,
                 ],
                 'segmentS' => [
                     'informacao_5' => $message3,
                     'informacao_6' => $message4,
-                    'informacao_7' => 'Telefones para Contato: (16) 99999-9999',
-                    'informacao_8' => $mes . '/' . $ano . ' de vencimento',
-                    'informacao_9' => 'Pagavel até o dia o ultimo dia do mes',
+                    'informacao_7' => "Mensagem 7",
+                    'informacao_8' => "Mensagem 8",
+                    'informacao_9' => "Mensagem 9",
                 ]
             ]);
 
