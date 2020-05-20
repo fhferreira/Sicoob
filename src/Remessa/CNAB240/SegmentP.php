@@ -327,7 +327,7 @@ class SegmentP extends LineAbstract
             'seq' => '29.3P',
             'start' => 127,
             'end' => 141,
-            'size' => 16,
+            'size' => 15,
             'default' => 0,
             'type' => 'money',
             'description' => 'Juros de Mora por Dia/Taxa ao Mês
